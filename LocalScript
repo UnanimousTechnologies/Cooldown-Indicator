@@ -1,0 +1,13 @@
+local cooldownBar = script.Parent:WaitForChild("Bar")
+local function startCooldown(duration)
+    -- Reset to empty (left edge) then grow to full width
+    cooldownBar.Size = UDim2.new(0, 0, 1, 0)
+    cooldownBar:TweenSize(
+        UDim2.new(1, 0, 1, 0),
+        Enum.EasingDirection.Out,
+        Enum.EasingStyle.Linear,
+        duration,
+        true
+    )
+end
+startCooldown(5) -- example
